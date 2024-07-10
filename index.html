@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <audio class="audio" id="audio1" src="./audio/audio1.mp3"></audio>
+    <audio class="audio" id="audio2" src="./audio/audio2.mp3"></audio>
+    <audio class="audio" id="audio3" src="./audio/audio3.mp3"></audio>
+    <audio class="audio" id="audio4" src="./audio/audio4.mp3"></audio>
+    <audio class="audio" id="audio5" src="./audio/audio5.mp3"></audio>
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/2048px-Spotify_logo_without_text.svg.png"
+    />
+    <!---------google fonts------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!--------------------------------->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>v-Player</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="sidebar-nav">
+          <div class="logo">
+            <a href=""><img src="images/logo.png" alt="" /></a>
+          </div>
+
+          <ul>
+            <li>
+              <a href="">
+                <span><i class="fa-solid fa-house"></i></span>
+                <span>Home</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="">
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                <span>Search</span>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <span><i class="fa-solid fa-music"></i></span>
+                <span>Last Listening</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-nav box2">
+          <ul>
+            <li>
+              <a href="">
+                <span><i class="fa-solid fa-book"></i></span>
+                <span class="library">Your Queue</span>
+              </a>
+            </li>
+
+            <li>
+              <div class="sidebar-scroll">
+                <div class="create-playlist">
+                  <h4>Create your first playlist</h4>
+                  <p>It's easy, we'll help you</p>
+                  <button>Create Playlist</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="privacy">
+            <ul>
+              <li>
+                <a href="">Legal</a>
+                <a href="">Safety & Privacy</a>
+                <a href="">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="">Cookies</a>
+                <a href="">About Ads</a>
+                <a href="">Accessibility</a>
+              </li>
+              <li>
+                <a href="">Cookies</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="eng-btn">
+            <button>English</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ............Main Section Starts From Here.............. -->
+      <div class="main-section">
+        <div class="top-nav">
+          <div class="prev-btn">
+            <button><i class="fa-solid fa-chevron-left"></i></button>
+            <button><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+
+          <div class="login-btn">
+            <button class="sign-up">Sign Up</button>
+            <button class="login">Login</button>
+          </div>
+        </div>
+        <div class="menu-icon" id="menuIcon">
+          <button onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i> Menu
+          </button>
+        </div>
+        <div class="spotify-playlist">
+          <h2>Popular Artists</h2>
+          <div class="card">
+            <div class="item" data-audio="audio1">
+              <img class="artist" src="images/item-11.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Diljit Dosanjh</h4>
+              <p>Artist</p>
+            </div>
+
+            <div class="item" data-audio="audio2">
+              <img class="artist" src="images/item-12.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Ap Dhillon</h4>
+              <p>Artist</p>
+            </div>
+
+            <div class="item" data-audio="audio3">
+              <img class="artist" src="images/item-13.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Ed Sheeran</h4>
+              <p>Artist</p>
+            </div>
+
+            <div class="item" data-audio="audio4">
+              <img class="artist" src="images/item-14.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Justin Bieber</h4>
+              <p>Artist</p>
+            </div>
+
+            <div class="item" data-audio="audio5">
+              <img class="artist" src="images/item-15.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Shubh</h4>
+              <p>Artist</p>
+            </div>
+          </div>
+        </div>
+        <div class="spotify-playlist">
+          <h2>Popular Releases</h2>
+          <div class="card">
+            <div class="item" data-audio="audio1">
+              <img src="images/item-1.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Hass Hass</h4>
+              <p>Diljit Dosanjh, Sia, Greg Kurstin</p>
+            </div>
+
+            <div class="item" data-audio="audio2">
+              <img src="images/item-2.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Brown Munde</h4>
+              <p>AP Dhillon, Gill, Shinda Kahlon</p>
+            </div>
+
+            <div class="item" data-audio="audio3">
+              <img src="images/item-3.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Shape of you</h4>
+              <p>Ed Sheeran</p>
+            </div>
+
+            <div class="item" data-audio="audio4">
+              <img src="images/item-4.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Baby</h4>
+              <p>Justin Bieber, Ludacris</p>
+            </div>
+
+            <div class="item" data-audio="audio5">
+              <img src="images/item-5.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Cheques</h4>
+              <p>Shubh</p>
+            </div>
+          </div>
+        </div>
+        <div class="spotify-playlist">
+          <h2>Popular Albums</h2>
+          <div class="card">
+            <div class="item" data-audio="audio1">
+              <img src="images/item-6.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Moonchild Era</h4>
+              <p>Diljit Dosanjh, Sia, Greg Kurstin</p>
+            </div>
+
+            <div class="item" data-audio="audio2">
+              <img src="images/item-7.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Brown Boys Forever</h4>
+              <p>AP Dhillon, Gill, Shinda Kahlon</p>
+            </div>
+
+            <div class="item" data-audio="audio3">
+              <img src="images/item-8.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Divide</h4>
+              <p>Ed Sheeran</p>
+            </div>
+
+            <div class="item" data-audio="audio4">
+              <img src="images/item-9.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>My World 2.0</h4>
+              <p>Justin Bieber, Ludacris</p>
+            </div>
+
+            <div class="item" data-audio="audio5">
+              <img src="images/item-10.jpg" alt="" />
+              <div class="play-btn">
+                <span><i class="fa-solid fa-play"></i></span>
+              </div>
+              <h4>Still Rollin</h4>
+              <p>Shubh</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <div class="footer">
+            <div class="footer-links">
+              <div class="footer-column">
+                <div>Company</div>
+                <ul class="col-links">
+                  <li><a href="">About</a></li>
+                  <li><a href="">Jobs</a></li>
+                  <li><a href="">For the Record</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <div>Company</div>
+                <ul class="col-links">
+                  <li><a href="">For Artists</a></li>
+                  <li><a href="">Developers</a></li>
+                  <li><a href="">Advertising</a></li>
+                  <li><a href="">Investors</a></li>
+                  <li><a href="">Vendors</a></li>
+                </ul>
+              </div>
+              <div class="footer-column">
+                <div>Company</div>
+                <ul class="col-links">
+                  <li><a href="">Support</a></li>
+                  <li><a href="">Free Mobile App</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <div>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-facebook"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+
+        <div>
+          <p class="copyright">&copy; 2024 Spotify AB</p>
+        </div>
+      </div>
+
+      <div class="preview">
+        <div class="text" id="preview">
+          <h4>Preview of v-Player</h4>
+          <p>
+            Sign up to get unlimited songs and podcasts with occasional ads. No
+            credit card needed.
+          </p>
+        </div>
+        <div class="music-player" id="musicPlayer">
+          <div class="player-controls">
+            <button class="player-button" onclick="togglePlayPause()">
+              <i class="fa-solid fa-play" id="player"></i>
+            </button>
+            <input
+              type="range"
+              class="player-slider"
+              id="playerSlider"
+              min="0"
+              value="0"
+            />
+            <button class="player-button">
+              <i class="fa-solid fa-volume-up"></i>
+            </button>
+            <input
+              type="range"
+              id="volumeSlider"
+              min="0"
+              max="1"
+              step="0.1"
+              value="1"
+            />
+            <button class="player-button">
+              <i id="shuffleIcon" class="fa-solid fa-random"></i>
+            </button>
+            <button class="player-button">
+              <i id="repeatIcon" class="fa fa-repeat"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="button">
+          <button>Sign Up Free</button>
+        </div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
