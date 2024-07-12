@@ -157,6 +157,7 @@ body {
   background: #181818;
   height: 100vh;
   overflow-y: auto;
+  margin-bottom: 80px;
 }
 .main-section::-webkit-scrollbar {
   background: transparent;
@@ -209,15 +210,15 @@ body {
   background: #f3f3f3;
 }
 
-.spotify-playlist {
+.vplayer-playlist {
   padding: 20px 40px;
 }
-.spotify-playlist h2 {
+.vplayer-playlist h2 {
   color: #fff;
   font-size: 22px;
   margin-bottom: 20px;
 }
-.spotify-playlist .card {
+.vplayer-playlist .card {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -225,7 +226,7 @@ body {
   overflow: hidden;
 }
 
-.spotify-playlist .card .item {
+.vplayer-playlist .card .item {
   min-width: 140px;
   width: 190px;
   background-color: #272626;
@@ -233,30 +234,30 @@ body {
   border-radius: 6px;
   padding: 15px;
 }
-.spotify-playlist .card .item:hover {
+.vplayer-playlist .card .item:hover {
   background-color: #3d3c3c;
 }
-.spotify-playlist .card .item img {
+.vplayer-playlist .card .item img {
   width: 100%;
   border-radius: 6px;
   margin-bottom: 10px;
 }
 
-.spotify-playlist .item h4 {
+.vplayer-playlist .item h4 {
   color: #fff;
 }
-.spotify-playlist .item p {
+.vplayer-playlist .item p {
   color: #8f8e8e;
   font-size: 13px;
   margin-top: 10px;
 }
-.spotify-playlist .item p:hover {
+.vplayer-playlist .item p:hover {
   text-decoration: underline;
 }
-.spotify-playlist .play-btn {
+.vplayer-playlist .play-btn {
   position: relative;
 }
-.spotify-playlist .play-btn i {
+.vplayer-playlist .play-btn i {
   position: absolute;
   background: #1db954;
   border-radius: 50%;
@@ -267,7 +268,7 @@ body {
   transform: 0.3s ease all;
 }
 
-.spotify-playlist .card .item:hover .play-btn i {
+.vplayer-playlist .card .item:hover .play-btn i {
   opacity: 1;
   transform: translateY(-20px);
 }
@@ -344,16 +345,19 @@ hr {
   background: linear-gradient(to right, #ae2896, #509bf5);
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 0px;
+  right: 10px;
   padding: 12px 40px;
+  border-radius: 10px 0;
 }
 .music-player {
   display: none;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 10px;
+
+  border-radius: 10px 0;
   background: linear-gradient(to right, #ae2896, #509bf5);
   padding: 10px;
   border: none;
