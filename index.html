@@ -330,13 +330,18 @@
             <button class="player-button" onclick="togglePlayPause()">
               <i class="fa-solid fa-play" id="player"></i>
             </button>
+            <button class="player-button">
+              <i class="fa-solid fa-backward" onclick="playLast()"></i>
+            </button>
             <input
               type="range"
               class="player-slider"
               id="playerSlider"
               min="0"
               value="0"
-            />
+            /><button class="player-button">
+              <i class="fa-solid fa-forward" onclick="playNext()"></i>
+            </button>
             <button class="player-button">
               <i class="fa-solid fa-volume-up"></i>
             </button>

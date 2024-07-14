@@ -39,6 +39,18 @@ function playAudio(audioId) {
       playerSlider.value =
         (audioElement.currentTime / audioElement.duration) * 100;
     });
+    var items = document.querySelectorAll(".item");
+    items.forEach(function (item) {
+      item.classList.remove("playing");
+    });
+    var currentItems = document.querySelectorAll(
+      '[data-audio="' + audioId + '"]'
+    );
+    currentItems.forEach(function (item) {
+      if (currentItems) {
+        item.classList.add("playing");
+      }
+    });
   }
 }
 function stopAllAudio() {
@@ -83,17 +95,41 @@ function togglePlayPause() {
     }
   }
 }
-function playAudioByIndex(index) {
-  if (index >= 0 && index < audioFiles.length) {
-    playAudio("audio" + (index + 1));
-    temp.audioId = "audio" + (index + 1);
+function playNext() {
+  if (document.getElementById("shuffleIcon").classList[2] === "active") {
+    playShuffleTrack(temp.audioId);
+  } else if (document.getElementById("repeatIcon").classList[2] === "active") {
+    playAudio(temp.audioId);
+  } else {
+    let currentString = temp.audioId;
+    let currentNumber = currentString.slice(5);
+    let newNumber = (parseInt(currentNumber) % 5) + 1;
+    temp.audioId = "audio" + newNumber;
+    playAudio(temp.audioId);
   }
 }
+function playLast() {
+  let currentString = temp.audioId;
+  let currentNumber = currentString.slice(5);
+  let newNumber;
+  if (currentNumber == 1) {
+    newNumber = 5;
+  } else {
+    newNumber = parseInt(currentNumber) - 1;
+  }
+  temp.audioId = "audio" + newNumber;
+  playAudio(temp.audioId);
+}
+function playShuffleTrack(audioID) {
+  let currentNumber = audioID.charAt(5);
+  let randomIndex;
 
-function playShuffleTrack() {
-  console.log("2");
-  let randomIndex = Math.floor(Math.random() * audioFiles.length);
-  playAudioByIndex(randomIndex);
+  do {
+    randomIndex = Math.floor(Math.random() * audioFiles.length) + 1;
+  } while (randomIndex === parseInt(currentNumber));
+
+  temp.audioId = "audio" + randomIndex;
+  playAudio(temp.audioId);
 }
 document.addEventListener("DOMContentLoaded", function () {
   var items = document.querySelectorAll(".item");
@@ -111,9 +147,9 @@ document.addEventListener("DOMContentLoaded", function () {
     audio.addEventListener("ended", function () {
       temp.currentTime = 0;
       audio.currentTime = 0;
+      var audioId = this.getAttribute("data-audio");
       if (document.getElementById("shuffleIcon").classList[2] === "active") {
-        console.log("1");
-        playShuffleTrack();
+        playShuffleTrack(audioId);
       } else if (
         document.getElementById("repeatIcon").classList[2] === "active"
       ) {

@@ -139,8 +139,6 @@ body {
 .eng-btn button {
   padding: 10px 30px;
   background: transparent;
-  border: 0;
-  outline: none;
   color: #ffffff;
   border: 1px solid #818080;
   border-radius: 20px;
@@ -225,7 +223,12 @@ body {
   gap: 20px;
   overflow: hidden;
 }
-
+.playing {
+  background-color: #6c757d !important;
+}
+.playing p {
+  color: whitesmoke !important;
+}
 .vplayer-playlist .card .item {
   min-width: 140px;
   width: 190px;
@@ -234,7 +237,8 @@ body {
   border-radius: 6px;
   padding: 15px;
 }
-.vplayer-playlist .card .item:hover {
+.vplayer-playlist .card .item:hover,
+.playing {
   background-color: #3d3c3c;
 }
 .vplayer-playlist .card .item img {
@@ -373,7 +377,7 @@ hr {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  padding: 10px;
 }
 
 .player-slider {
